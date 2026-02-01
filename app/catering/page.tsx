@@ -59,6 +59,45 @@ export default function CateringPage() {
         description="From intimate dinner parties to grand celebrations, we bring authentic Italian cuisine to your event. Made with the same care you expect from our restaurant."
       />
 
+      {/* Order via EZCater */}
+      <section className="section-padding">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <p
+            className="text-sm uppercase tracking-[0.3em] text-rosso-500"
+            style={{ fontFamily: "var(--font-decorative)" }}
+          >
+            Order Catering
+          </p>
+          <h2 className="mt-4 text-3xl sm:text-4xl">
+            Place Your Catering Order
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            Order online through ezCater for easy scheduling, menu selection, and
+            group ordering. Available for delivery and pickup.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-8 bg-rosso-500 px-10 text-lg hover:bg-rosso-400"
+          >
+            <a
+              href="https://www.ezcater.com/catering/quattro-pazzi-3"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Order on ezCater
+              <ExternalLink className="ml-2 h-5 w-5" />
+            </a>
+          </Button>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Prefer to call? Reach us at{" "}
+            <a href={`tel:+1${LOCATION.phone}`} className="font-medium text-rosso-500 hover:underline">
+              {LOCATION.phoneFormatted}
+            </a>
+          </p>
+        </div>
+      </section>
+
       {/* Packages */}
       <section className="section-padding">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -120,45 +159,6 @@ export default function CateringPage() {
               </p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Order via EZCater */}
-      <section className="section-padding">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <p
-            className="text-sm uppercase tracking-[0.3em] text-rosso-500"
-            style={{ fontFamily: "var(--font-decorative)" }}
-          >
-            Order Catering
-          </p>
-          <h2 className="mt-4 text-3xl sm:text-4xl">
-            Place Your Catering Order
-          </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
-            Order online through ezCater for easy scheduling, menu selection, and
-            group ordering. Available for delivery and pickup.
-          </p>
-          <Button
-            asChild
-            size="lg"
-            className="mt-8 bg-rosso-500 px-10 text-lg hover:bg-rosso-400"
-          >
-            <a
-              href="https://www.ezcater.com/catering/quattro-pazzi-3"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Order on ezCater
-              <ExternalLink className="ml-2 h-5 w-5" />
-            </a>
-          </Button>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Prefer to call? Reach us at{" "}
-            <a href={`tel:+1${LOCATION.phone}`} className="font-medium text-rosso-500 hover:underline">
-              {LOCATION.phoneFormatted}
-            </a>
-          </p>
         </div>
       </section>
 
