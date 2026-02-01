@@ -1,9 +1,7 @@
 import Link from "next/link"
-import { UtensilsCrossed, Wine, Clock, Heart } from "lucide-react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { CTABanner } from "@/components/sections/CTABanner"
-import { FeatureGrid } from "@/components/sections/FeatureGrid"
-import { LOCATION, BRAND } from "@/lib/locations"
+import { LOCATION, BRAND, SOCIAL } from "@/lib/locations"
 import {
   Accordion,
   AccordionContent,
@@ -11,33 +9,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { JsonLd } from "@/components/seo/JsonLd"
-
-const FEATURES = [
-  {
-    icon: UtensilsCrossed,
-    title: "Handmade Pasta",
-    description:
-      "Our pasta is made fresh daily using traditional Italian techniques. From pappardelle to gnocchi, every dish is crafted with care.",
-  },
-  {
-    icon: Wine,
-    title: "Award-Winning Wine List",
-    description:
-      "An extensive selection of Italian and international wines, curated to complement every dish on our menu.",
-  },
-  {
-    icon: Clock,
-    title: "Happy Hour Daily",
-    description:
-      "Join us Monday through Friday from 3-6 PM for discounted bites, wines by the glass, and signature cocktails.",
-  },
-  {
-    icon: Heart,
-    title: "Since 1997",
-    description:
-      "Fairfield's beloved Italian restaurant for over 25 years. A tradition of exceptional food and warm hospitality.",
-  },
-]
 
 const FAQ_ITEMS = [
   {
@@ -48,7 +19,7 @@ const FAQ_ITEMS = [
   {
     question: "Do you take reservations?",
     answer:
-      "Yes! You can make a reservation through OpenTable on our Reservations page, or call us directly at (203) 254-9900. Walk-ins are also welcome.",
+      "Yes! You can reserve through Toast Tables on our Reservations page, or call us directly at (203) 254-9900. Walk-ins are also welcome.",
   },
   {
     question: "Do you offer online ordering?",
@@ -72,6 +43,15 @@ const FAQ_ITEMS = [
   },
 ]
 
+const FOOD_PHOTOS = [
+  { src: "/images/food/filet.jpg", alt: "Filet mignon with crispy onions", label: "Secondi" },
+  { src: "/images/food/ravioli.jpg", alt: "Handmade ravioli with basil", label: "Pasta" },
+  { src: "/images/food/seafood.jpg", alt: "Seafood antipasto", label: "Antipasti" },
+  { src: "/images/food/gnocchi.jpg", alt: "Gnocchi bolognese", label: "Pasta" },
+  { src: "/images/food/penne.jpg", alt: "Penne with ricotta", label: "Pasta" },
+  { src: "/images/food/chicken.jpg", alt: "Chicken with seasonal vegetables", label: "Secondi" },
+]
+
 export default function HomePage() {
   return (
     <>
@@ -90,36 +70,47 @@ export default function HomePage() {
         }}
       />
 
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-rosso-900">
-        <div className="absolute inset-0 bg-gradient-to-r from-rosso-900/95 via-rosso-900/80 to-rosso-900/60" />
-        <div className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 sm:py-32 lg:px-8 lg:py-40">
-          <div className="max-w-2xl">
-            <p className="font-decorative text-sm font-normal uppercase tracking-[0.3em] text-oro-400" style={{ fontFamily: "var(--font-decorative)" }}>
+      {/* ====== HERO - Full Viewport ====== */}
+      <section className="relative h-[100svh] min-h-[600px] overflow-hidden">
+        <Image
+          src="/images/food/filet.jpg"
+          alt="Quattro Pazzi signature dish"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
+        <div className="relative flex h-full flex-col justify-end pb-16 sm:pb-24 lg:pb-32">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            <p
+              className="text-sm font-normal uppercase tracking-[0.4em] text-oro-400"
+              style={{ fontFamily: "var(--font-decorative)" }}
+            >
               Est. {BRAND.founded} &bull; {LOCATION.city}, {LOCATION.state}
             </p>
-            <h1 className="mt-4 text-5xl leading-[1.1] text-white sm:text-6xl lg:text-7xl">
-              Authentic
+            <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] text-white sm:text-7xl lg:text-8xl">
+              The Art of
               <br />
-              <span className="text-oro-400">Italian</span> Dining
+              <span className="italic text-oro-400">Italian</span> Dining
             </h1>
-            <p className="mt-6 max-w-lg text-lg leading-relaxed text-white/70">
-              Handmade pasta, fresh seafood, craft cocktails, and an award-winning
-              wine list. Experience the warmth of Italian hospitality in Fairfield, CT.
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
+              Handmade pasta, fresh seafood, craft cocktails, and an award-winning wine list.
             </p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button
                 asChild
                 size="lg"
-                className="bg-rosso-500 text-lg hover:bg-rosso-400"
+                className="bg-rosso-500 px-8 text-lg hover:bg-rosso-400"
               >
-                <Link href="/reservations">Make a Reservation</Link>
+                <Link href="/reservations">Reserve a Table</Link>
               </Button>
               <Button
                 asChild
                 size="lg"
                 variant="outline"
-                className="border-white/30 bg-transparent text-lg text-white hover:bg-white/10 hover:text-white"
+                className="border-white/30 bg-transparent px-8 text-lg text-white hover:bg-white/10 hover:text-white"
               >
                 <Link href="/menu">View Menu</Link>
               </Button>
@@ -128,55 +119,163 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Intro Strip */}
-      <section className="border-b border-border bg-crema-elevated py-6">
-        <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
-          <p className="text-lg text-muted-foreground">
-            <span className="font-semibold text-foreground">{BRAND.tagline}</span>
-            {" "}&bull; {LOCATION.address}, {LOCATION.city}, {LOCATION.state}
-            {" "}&bull;{" "}
-            <a href={`tel:${LOCATION.phone}`} className="font-semibold text-rosso-500 hover:text-rosso-600">
-              {LOCATION.phoneFormatted}
-            </a>
+      {/* ====== PHOTO GRID - BAM ====== */}
+      <section className="grid grid-cols-2 md:grid-cols-3">
+        {FOOD_PHOTOS.map((photo) => (
+          <div key={photo.src} className="group relative aspect-square overflow-hidden">
+            <Image
+              src={photo.src}
+              alt={photo.alt}
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-110"
+              sizes="(max-width: 768px) 50vw, 33vw"
+            />
+            <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/40" />
+            <div className="absolute inset-0 flex items-end p-4 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <span className="text-sm font-medium uppercase tracking-widest text-oro-400">
+                {photo.label}
+              </span>
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* ====== STATEMENT SECTION ====== */}
+      <section className="relative overflow-hidden bg-espresso-900 py-24 sm:py-32">
+        <div className="absolute inset-0 opacity-20">
+          <Image
+            src="/images/hero/lights.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            sizes="100vw"
+          />
+        </div>
+        <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <p
+            className="text-sm uppercase tracking-[0.4em] text-oro-400"
+            style={{ fontFamily: "var(--font-decorative)" }}
+          >
+            Fresh &bull; Seasonal &bull; Vibrant
           </p>
+          <h2 className="mt-6 text-4xl leading-tight text-white sm:text-5xl lg:text-6xl">
+            Where tradition meets{" "}
+            <span className="italic text-oro-400">modern Italian</span> cuisine
+          </h2>
+          <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-white/60">
+            Since 1997, Chef Gino has been crafting dishes that honor Italian heritage
+            while embracing the flavors of each season. Every plate tells a story
+            of passion, quality ingredients, and artistry.
+          </p>
+          <div className="mt-10 flex justify-center gap-4">
+            <Button
+              asChild
+              size="lg"
+              className="bg-oro-500 px-8 text-lg text-espresso-900 hover:bg-oro-400"
+            >
+              <Link href="/about">Our Story</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
-      {/* Feature Cards */}
-      <section className="section-padding">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl sm:text-4xl">The Quattro Pazzi Experience</h2>
-            <p className="mt-3 text-lg text-muted-foreground">
-              What makes us a Fairfield favorite since 1997
+      {/* ====== FULL-BLEED IMAGE BREAK ====== */}
+      <section className="relative h-[50vh] min-h-[300px] overflow-hidden sm:h-[60vh]">
+        <Image
+          src="/images/hero/interior.jpg"
+          alt="Quattro Pazzi dining room"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
+          <div className="mx-auto max-w-7xl">
+            <p
+              className="text-sm uppercase tracking-[0.3em] text-oro-400"
+              style={{ fontFamily: "var(--font-decorative)" }}
+            >
+              Private Dining Available
             </p>
-          </div>
-          <div className="mt-12">
-            <FeatureGrid features={FEATURES} columns={4} />
+            <h3 className="mt-2 text-3xl text-white sm:text-4xl">
+              Your Table Awaits
+            </h3>
           </div>
         </div>
       </section>
 
-      {/* Location & Hours */}
-      <section className="section-padding bg-crema-elevated">
+      {/* ====== DUAL FEATURE ====== */}
+      <section className="grid lg:grid-cols-2">
+        {/* Left - Menu Highlight */}
+        <div className="relative overflow-hidden bg-espresso-800 px-8 py-20 sm:px-12 sm:py-28 lg:px-16">
+          <div className="relative z-10">
+            <p
+              className="text-sm uppercase tracking-[0.3em] text-oro-400"
+              style={{ fontFamily: "var(--font-decorative)" }}
+            >
+              The Menu
+            </p>
+            <h2 className="mt-4 text-3xl text-white sm:text-4xl">
+              Crafted with <span className="italic text-oro-400">Passion</span>
+            </h2>
+            <p className="mt-4 max-w-md text-white/60">
+              From handmade pasta and fresh seafood to wood-fired specialties,
+              every dish celebrates the best of Italian cuisine.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="mt-8 border-oro-400/30 text-oro-400 hover:bg-oro-400/10 hover:text-oro-300"
+            >
+              <Link href="/menu">Explore the Menu</Link>
+            </Button>
+          </div>
+        </div>
+        {/* Right - Image */}
+        <div className="relative aspect-square overflow-hidden lg:aspect-auto">
+          <Image
+            src="/images/food/ravioli.jpg"
+            alt="Handmade ravioli"
+            fill
+            className="object-cover"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+          />
+        </div>
+      </section>
+
+      {/* ====== EXTERIOR + VISIT ====== */}
+      <section className="section-padding bg-crema-base">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="overflow-hidden rounded-xl">
+              <Image
+                src="/images/hero/exterior.jpg"
+                alt="Quattro Pazzi exterior"
+                width={800}
+                height={600}
+                className="h-auto w-full object-cover"
+              />
+            </div>
             <div>
-              <h2 className="text-3xl sm:text-4xl">Visit Us</h2>
-              <p className="mt-4 text-lg text-muted-foreground">
-                Located on Post Road in the heart of Fairfield, we&apos;re easy to find and
-                ready to welcome you for lunch, happy hour, dinner, or Sunday brunch.
+              <p
+                className="text-sm uppercase tracking-[0.3em] text-rosso-500"
+                style={{ fontFamily: "var(--font-decorative)" }}
+              >
+                Visit Us
               </p>
-              <div className="mt-6 space-y-3 text-muted-foreground">
-                <p className="font-sans font-semibold text-foreground">
-                  {LOCATION.address}
-                  <br />
+              <h2 className="mt-4 text-3xl sm:text-4xl">
+                {LOCATION.address}
+                <br />
+                <span className="text-muted-foreground">
                   {LOCATION.city}, {LOCATION.state} {LOCATION.zip}
-                </p>
+                </span>
+              </h2>
+              <div className="mt-6 space-y-3 text-muted-foreground">
                 <p>
                   <a
                     href={`tel:${LOCATION.phone}`}
-                    className="font-semibold text-rosso-500 hover:text-rosso-600"
+                    className="text-lg font-semibold text-rosso-500 hover:text-rosso-600"
                   >
                     {LOCATION.phoneFormatted}
                   </a>
@@ -186,7 +285,9 @@ export default function HomePage() {
                   <p>Thu: 11:30 AM &ndash; 9:30 PM</p>
                   <p>Fri&ndash;Sat: 11:30 AM &ndash; 10:00 PM</p>
                   <p>Sun: 11:00 AM &ndash; 9:00 PM</p>
-                  <p className="mt-2 font-medium text-oro-600">Happy Hour: {LOCATION.happyHour}</p>
+                  <p className="mt-2 font-medium text-oro-600">
+                    Happy Hour: {LOCATION.happyHour}
+                  </p>
                 </div>
               </div>
               <div className="mt-8 flex flex-wrap gap-4">
@@ -204,45 +305,141 @@ export default function HomePage() {
                 </Button>
               </div>
             </div>
-            <div className="overflow-hidden rounded-xl border border-border">
-              <iframe
-                src={LOCATION.mapEmbedUrl}
-                width="100%"
-                height="350"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Quattro Pazzi Cafe map"
-              />
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Instagram CTA */}
-      <section className="border-y border-border bg-card py-12">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl">Follow Our Journey</h2>
-          <p className="mt-3 text-muted-foreground">
-            Tag us in your photos and follow along for specials, events, and behind-the-scenes.
-          </p>
-          <Button asChild variant="outline" size="lg" className="mt-6">
-            <a
-              href="https://instagram.com/quattropazzicafe"
-              target="_blank"
-              rel="noopener noreferrer"
+      {/* ====== FULL-BLEED KITCHEN BREAK ====== */}
+      <section className="relative h-[40vh] min-h-[250px] overflow-hidden">
+        <Image
+          src="/images/interior/kitchen.jpg"
+          alt="Quattro Pazzi kitchen"
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative flex h-full items-center justify-center text-center">
+          <div className="px-4">
+            <p
+              className="text-sm uppercase tracking-[0.4em] text-oro-400"
+              style={{ fontFamily: "var(--font-decorative)" }}
             >
-              @quattropazzicafe
-            </a>
-          </Button>
+              Behind the Pass
+            </p>
+            <h3 className="mt-3 text-3xl text-white sm:text-4xl lg:text-5xl">
+              Where the <span className="italic text-oro-400">Magic</span> Happens
+            </h3>
+          </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section-padding">
+      {/* ====== DUAL CTA ====== */}
+      <section className="grid md:grid-cols-2">
+        {/* Catering */}
+        <div className="relative overflow-hidden bg-rosso-800 px-8 py-16 text-center sm:px-12 sm:py-20">
+          <div className="relative z-10">
+            <h3 className="text-3xl text-white sm:text-4xl">
+              Private Events &amp; Catering
+            </h3>
+            <p className="mx-auto mt-4 max-w-md text-white/60">
+              From intimate dinners to grand celebrations, let us craft
+              an unforgettable Italian experience.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="mt-8 border-white/30 text-white hover:bg-white/10 hover:text-white"
+            >
+              <Link href="/catering">Explore Catering</Link>
+            </Button>
+          </div>
+        </div>
+        {/* Order */}
+        <div className="relative overflow-hidden bg-espresso-800 px-8 py-16 text-center sm:px-12 sm:py-20">
+          <div className="relative z-10">
+            <h3 className="text-3xl text-white sm:text-4xl">
+              Order Pickup &amp; Delivery
+            </h3>
+            <p className="mx-auto mt-4 max-w-md text-white/60">
+              Enjoy Quattro Pazzi at home. Order pickup through Toast
+              or delivery via Uber Eats.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="mt-8 border-oro-400/30 text-oro-400 hover:bg-oro-400/10 hover:text-oro-300"
+            >
+              <Link href="/order">Order Now</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* ====== INSTAGRAM ====== */}
+      <section className="relative overflow-hidden bg-black py-20 sm:py-24">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+          <p
+            className="text-sm uppercase tracking-[0.4em] text-oro-400"
+            style={{ fontFamily: "var(--font-decorative)" }}
+          >
+            Follow the Journey
+          </p>
+          <h2 className="mt-4 text-3xl text-white sm:text-4xl">
+            {SOCIAL.instagramHandle}
+          </h2>
+          <p className="mt-4 text-white/50">
+            Tag us in your photos. Follow along for specials, events, and behind-the-scenes.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-8 bg-oro-500 px-8 text-espresso-900 hover:bg-oro-400"
+          >
+            <a
+              href={SOCIAL.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Follow Us on Instagram
+            </a>
+          </Button>
+        </div>
+        {/* Instagram Photo Strip */}
+        <div className="mt-12 grid grid-cols-3 gap-1 sm:grid-cols-6">
+          {[
+            "/images/food/tartufo.jpg",
+            "/images/food/trio-salad.jpg",
+            "/images/food/pasta-trio.jpg",
+            "/images/food/arugula-salad.jpg",
+            "/images/food/gnocchi.jpg",
+            "/images/food/seafood.jpg",
+          ].map((src) => (
+            <div key={src} className="relative aspect-square overflow-hidden">
+              <Image
+                src={src}
+                alt="Quattro Pazzi on Instagram"
+                fill
+                className="object-cover transition-transform duration-500 hover:scale-105"
+                sizes="(max-width: 640px) 33vw, 16vw"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ====== FAQ ====== */}
+      <section className="section-padding bg-crema-base">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-3xl sm:text-4xl">
+          <p
+            className="text-center text-sm uppercase tracking-[0.3em] text-rosso-500"
+            style={{ fontFamily: "var(--font-decorative)" }}
+          >
+            Common Questions
+          </p>
+          <h2 className="mt-4 text-center text-3xl sm:text-4xl">
             Frequently Asked Questions
           </h2>
           <Accordion type="single" collapsible className="mt-8">
@@ -260,23 +457,32 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Catering CTA */}
-      <CTABanner
-        title="Planning a Special Event?"
-        description="From intimate dinners to grand celebrations, let us bring authentic Italian cuisine to your next gathering."
-        buttonText="Explore Catering"
-        buttonHref="/catering"
-        variant="rosso"
-      />
-
-      {/* Reserve CTA */}
-      <CTABanner
-        title="Ready for an Unforgettable Meal?"
-        description="Reserve your table and experience the best Italian dining in Fairfield."
-        buttonText="Make a Reservation"
-        buttonHref="/reservations"
-        variant="oro"
-      />
+      {/* ====== FINAL CTA ====== */}
+      <section className="relative overflow-hidden py-24 sm:py-32">
+        <Image
+          src="/images/food/penne.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-black/70" />
+        <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+          <h2 className="text-4xl text-white sm:text-5xl lg:text-6xl">
+            Ready for an <span className="italic text-oro-400">Unforgettable</span> Meal?
+          </h2>
+          <p className="mt-6 text-lg text-white/60">
+            Reserve your table and experience the best Italian dining in Fairfield.
+          </p>
+          <Button
+            asChild
+            size="lg"
+            className="mt-10 bg-rosso-500 px-10 text-lg hover:bg-rosso-400"
+          >
+            <Link href="/reservations">Make a Reservation</Link>
+          </Button>
+        </div>
+      </section>
     </>
   )
 }

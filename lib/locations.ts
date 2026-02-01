@@ -53,8 +53,8 @@ export const LOCATION: Location = {
 } as const
 
 export const SOCIAL = {
-  instagram: "https://instagram.com/quattropazzicafe",
-  instagramHandle: "@quattropazzicafe",
+  instagram: "https://instagram.com/quattropazzi",
+  instagramHandle: "@quattropazzi",
   facebook: "https://facebook.com/quattropazzicafe",
   facebookHandle: "Quattro Pazzi Cafe",
 } as const

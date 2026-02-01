@@ -1,8 +1,9 @@
 import type { Metadata } from "next"
+import Image from "next/image"
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema"
 import { HeroSection } from "@/components/sections/HeroSection"
 import { Button } from "@/components/ui/button"
-import { BRAND } from "@/lib/locations"
+import { BRAND, SOCIAL } from "@/lib/locations"
 
 export const metadata: Metadata = {
   title: "Gallery | Photos",
@@ -13,26 +14,27 @@ export const metadata: Metadata = {
   },
 }
 
-const GALLERY_CATEGORIES = [
-  { label: "All", value: "all" },
-  { label: "Food", value: "food" },
-  { label: "Restaurant", value: "restaurant" },
-  { label: "Events", value: "events" },
-]
-
 const GALLERY_ITEMS = [
-  { category: "food", alt: "Handmade pappardelle with braised short rib ragu" },
-  { category: "food", alt: "Bruschetta pomodoro with fresh basil" },
-  { category: "restaurant", alt: "Quattro Pazzi dining room" },
-  { category: "food", alt: "Branzino with lemon and capers" },
-  { category: "events", alt: "Private dining event setup" },
-  { category: "food", alt: "Tiramisu dessert" },
-  { category: "food", alt: "Aperol Spritz cocktail" },
-  { category: "restaurant", alt: "Bar area at Quattro Pazzi" },
-  { category: "food", alt: "Antipasto board with cured meats and cheeses" },
-  { category: "events", alt: "Celebration dinner at Quattro Pazzi" },
-  { category: "food", alt: "Fresh calamari fritti" },
-  { category: "restaurant", alt: "Outdoor patio seating" },
+  { src: "/images/food/filet.jpg", alt: "Filet mignon with crispy onions and gnocchi", tall: true },
+  { src: "/images/food/ravioli.jpg", alt: "Handmade ravioli with basil and tomato sauce", tall: false },
+  { src: "/images/hero/interior.jpg", alt: "Quattro Pazzi dining room", tall: false },
+  { src: "/images/food/seafood.jpg", alt: "Seafood antipasto with cannellini beans", tall: true },
+  { src: "/images/food/gnocchi.jpg", alt: "Gnocchi bolognese on marble", tall: false },
+  { src: "/images/hero/exterior.jpg", alt: "Quattro Pazzi restaurant exterior", tall: true },
+  { src: "/images/food/penne.jpg", alt: "Penne with ricotta and seasonal vegetables", tall: false },
+  { src: "/images/food/tartufo.jpg", alt: "Tartufo dessert", tall: true },
+  { src: "/images/food/chicken.jpg", alt: "Chicken with butternut squash and sage", tall: false },
+  { src: "/images/hero/lights.jpg", alt: "Star-shaped light fixtures", tall: false },
+  { src: "/images/food/trio-salad.jpg", alt: "Trio salad plate", tall: true },
+  { src: "/images/interior/kitchen.jpg", alt: "Professional kitchen", tall: false },
+  { src: "/images/food/pasta-trio.jpg", alt: "Three pasta varieties", tall: false },
+  { src: "/images/food/arugula-salad.jpg", alt: "Arugula salad with goat cheese", tall: true },
+  { src: "/images/food/fish.jpg", alt: "Pan-seared fish with vegetables", tall: false },
+  { src: "/images/gallery/dish-1.jpg", alt: "Chef's special", tall: false },
+  { src: "/images/gallery/dish-3.jpg", alt: "Seasonal creation", tall: true },
+  { src: "/images/gallery/dish-5.jpg", alt: "House favorite", tall: false },
+  { src: "/images/gallery/dish-7.jpg", alt: "From the kitchen", tall: false },
+  { src: "/images/gallery/dish-9.jpg", alt: "Fresh from the garden", tall: true },
 ]
 
 export default function GalleryPage() {
@@ -48,52 +50,46 @@ export default function GalleryPage() {
 
       <section className="section-padding">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          {/* Category Filters */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {GALLERY_CATEGORIES.map((cat) => (
-              <Button
-                key={cat.value}
-                variant={cat.value === "all" ? "default" : "outline"}
-                size="sm"
-                className={cat.value === "all" ? "bg-rosso-500 hover:bg-rosso-600" : ""}
-              >
-                {cat.label}
-              </Button>
-            ))}
-          </div>
-
-          {/* Photo Grid */}
-          <div className="mt-10 columns-2 gap-4 sm:columns-3 lg:columns-4">
+          {/* Masonry Photo Grid */}
+          <div className="columns-2 gap-3 sm:columns-3 lg:columns-4">
             {GALLERY_ITEMS.map((item, i) => (
               <div
                 key={i}
-                className="mb-4 break-inside-avoid overflow-hidden rounded-lg border border-border bg-crema-elevated"
+                className="group mb-3 break-inside-avoid overflow-hidden rounded-lg"
               >
-                <div
-                  className="flex items-center justify-center bg-crema-muted"
-                  style={{ height: `${180 + (i % 3) * 60}px` }}
-                >
-                  <p className="px-4 text-center text-xs text-muted-foreground">
-                    {item.alt}
-                  </p>
+                <div className={`relative ${item.tall ? "aspect-[3/4]" : "aspect-square"} overflow-hidden`}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                  />
+                  <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/30" />
                 </div>
               </div>
             ))}
           </div>
 
           {/* Instagram CTA */}
-          <div className="mt-16 text-center">
-            <h2 className="text-2xl sm:text-3xl">See More on Instagram</h2>
+          <div className="mt-20 text-center">
+            <p
+              className="text-sm uppercase tracking-[0.3em] text-rosso-500"
+              style={{ fontFamily: "var(--font-decorative)" }}
+            >
+              Follow the Journey
+            </p>
+            <h2 className="mt-4 text-2xl sm:text-3xl">See More on Instagram</h2>
             <p className="mt-3 text-muted-foreground">
               Follow us for daily specials, behind-the-scenes, and more.
             </p>
-            <Button asChild variant="outline" size="lg" className="mt-6">
+            <Button asChild size="lg" className="mt-6 bg-rosso-500 hover:bg-rosso-600">
               <a
-                href="https://instagram.com/quattropazzicafe"
+                href={SOCIAL.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @quattropazzicafe
+                {SOCIAL.instagramHandle}
               </a>
             </Button>
           </div>
