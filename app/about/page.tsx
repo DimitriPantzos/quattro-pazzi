@@ -70,8 +70,8 @@ export default function AboutPage() {
       {/* Full-bleed image break */}
       <section className="relative h-[40vh] min-h-[250px] overflow-hidden">
         <Image
-          src="/images/hero/bar.jpg"
-          alt="Quattro Pazzi bar"
+          src="/images/interior/interior-dining.jpg"
+          alt="Quattro Pazzi dining room"
           fill
           className="object-cover"
           sizes="100vw"
@@ -167,7 +167,7 @@ export default function AboutPage() {
       {/* CTA */}
       <section className="relative overflow-hidden py-24 sm:py-32">
         <Image
-          src="/images/food/gnocchi.jpg"
+          src="/images/food/ravioli.jpg"
           alt=""
           fill
           className="object-cover"

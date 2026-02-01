@@ -44,12 +44,12 @@ const FAQ_ITEMS = [
 ]
 
 const FOOD_PHOTOS = [
-  { src: "/images/food/filet.jpg", alt: "Filet mignon with crispy onions", label: "Secondi" },
-  { src: "/images/food/ravioli.jpg", alt: "Handmade ravioli with basil", label: "Pasta" },
-  { src: "/images/food/seafood.jpg", alt: "Seafood antipasto", label: "Antipasti" },
-  { src: "/images/food/gnocchi.jpg", alt: "Gnocchi bolognese", label: "Pasta" },
-  { src: "/images/food/penne.jpg", alt: "Penne with ricotta", label: "Pasta" },
-  { src: "/images/food/chicken.jpg", alt: "Chicken with seasonal vegetables", label: "Secondi" },
+  { src: "/images/food/ravioli-cocktails.jpg", alt: "Burrata ravioli with craft cocktails", label: "Pasta" },
+  { src: "/images/food/grilled-vegetables.jpg", alt: "Grilled mixed vegetables with beet hummus", label: "Antipasti" },
+  { src: "/images/food/la-scala-salad.jpg", alt: "La Scala salad with radish and salami", label: "Insalate" },
+  { src: "/images/drinks/espresso-martini-1.jpg", alt: "Espresso martini on marble bar", label: "Cocktails" },
+  { src: "/images/food/cover-food.jpg", alt: "Seasonal creation", label: "Secondi" },
+  { src: "/images/food/salad-duo.jpg", alt: "Arugula endive and La Scala salads", label: "Insalate" },
 ]
 
 export default function HomePage() {
@@ -73,8 +73,8 @@ export default function HomePage() {
       {/* ====== HERO - Full Viewport ====== */}
       <section className="relative h-[100svh] min-h-[600px] overflow-hidden">
         <Image
-          src="/images/food/filet.jpg"
-          alt="Quattro Pazzi signature dish"
+          src="/images/food/chicken-milanese.jpg"
+          alt="Chicken milanese with Caesar salad and craft cocktails"
           fill
           priority
           className="object-cover"
@@ -236,7 +236,7 @@ export default function HomePage() {
         <div className="relative aspect-square overflow-hidden lg:aspect-auto">
           <Image
             src="/images/food/ravioli.jpg"
-            alt="Handmade ravioli"
+            alt="Burrata cheese ravioli with tomato sauce"
             fill
             className="object-cover"
             sizes="(max-width: 1024px) 100vw, 50vw"
@@ -313,8 +313,8 @@ export default function HomePage() {
       {/* ====== FULL-BLEED KITCHEN BREAK ====== */}
       <section className="relative h-[40vh] min-h-[250px] overflow-hidden">
         <Image
-          src="/images/interior/kitchen.jpg"
-          alt="Quattro Pazzi kitchen"
+          src="/images/interior/interior-2.jpg"
+          alt="Quattro Pazzi interior with hanging plants"
           fill
           className="object-cover"
           sizes="100vw"
@@ -411,12 +411,12 @@ export default function HomePage() {
         {/* Instagram Photo Strip */}
         <div className="mt-12 grid grid-cols-3 gap-1 sm:grid-cols-6">
           {[
-            "/images/food/tartufo.jpg",
-            "/images/food/trio-salad.jpg",
-            "/images/food/pasta-trio.jpg",
             "/images/food/arugula-salad.jpg",
-            "/images/food/gnocchi.jpg",
-            "/images/food/seafood.jpg",
+            "/images/food/vegetables-cocktails.jpg",
+            "/images/drinks/espresso-martini-2.jpg",
+            "/images/food/veggies-wine.jpg",
+            "/images/food/ravioli.jpg",
+            "/images/food/vegetables-bar.jpg",
           ].map((src) => (
             <div key={src} className="relative aspect-square overflow-hidden">
               <Image
@@ -461,7 +461,7 @@ export default function HomePage() {
       {/* ====== FINAL CTA ====== */}
       <section className="relative overflow-hidden py-24 sm:py-32">
         <Image
-          src="/images/food/penne.jpg"
+          src="/images/food/grilled-vegetables.jpg"
           alt=""
           fill
           className="object-cover"
