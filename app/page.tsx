@@ -45,7 +45,7 @@ const FAQ_ITEMS = [
 
 const FOOD_PHOTOS = [
   { src: "/images/food/ravioli-cocktails.jpg", alt: "Burrata ravioli with craft cocktails", label: "Pasta" },
-  { src: "/images/food/grilled-vegetables.jpg", alt: "Grilled mixed vegetables with beet hummus", label: "Antipasti" },
+  { src: "/images/food/ravioli.jpg", alt: "Burrata cheese ravioli with tomato sauce", label: "Pasta" },
   { src: "/images/food/la-scala-salad.jpg", alt: "La Scala salad with radish and salami", label: "Insalate" },
   { src: "/images/drinks/espresso-martini-1.jpg", alt: "Espresso martini on marble bar", label: "Cocktails" },
   { src: "/images/food/cover-food.jpg", alt: "Seasonal creation", label: "Secondi" },
@@ -461,7 +461,7 @@ export default function HomePage() {
       {/* ====== FINAL CTA ====== */}
       <section className="relative overflow-hidden py-24 sm:py-32">
         <Image
-          src="/images/food/grilled-vegetables.jpg"
+          src="/images/food/chicken-milanese.jpg"
           alt=""
           fill
           className="object-cover"

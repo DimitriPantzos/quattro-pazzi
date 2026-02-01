@@ -18,7 +18,7 @@ const GALLERY_ITEMS = [
   { src: "/images/food/chicken-milanese.jpg", alt: "Chicken milanese with Caesar salad and cocktails", tall: false },
   { src: "/images/food/ravioli.jpg", alt: "Burrata cheese ravioli with tomato sauce", tall: true },
   { src: "/images/interior/interior-dining.jpg", alt: "Quattro Pazzi dining room with velvet banquettes", tall: false },
-  { src: "/images/food/grilled-vegetables.jpg", alt: "Grilled mixed vegetables with beet hummus", tall: true },
+  { src: "/images/food/cover-food.jpg", alt: "Chef's seasonal creation", tall: true },
   { src: "/images/drinks/espresso-martini-1.jpg", alt: "Espresso martini on marble bar", tall: true },
   { src: "/images/food/la-scala-salad.jpg", alt: "La Scala salad with salami and radish", tall: false },
   { src: "/images/food/ravioli-cocktails.jpg", alt: "Burrata ravioli with colorful cocktails", tall: true },
