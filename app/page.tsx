@@ -257,7 +257,7 @@ export default function HomePage() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Quattro Pazzi Cafe map"
+                title="Quattro Pazzi map"
               />
             </div>
             <div>

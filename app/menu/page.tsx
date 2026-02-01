@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/seo/JsonLd"
 export const metadata: Metadata = {
   title: "Menu | Dinner, Lunch, Happy Hour, Brunch & Wine",
   description:
-    "Explore the Quattro Pazzi Cafe menu. Authentic Italian pasta, seafood, steaks, salads, and more. Happy hour specials, Sunday brunch, and an extensive wine list.",
+    "Explore the Quattro Pazzi menu. Authentic Italian pasta, seafood, steaks, salads, and more. Happy hour specials, Sunday brunch, and an extensive wine list.",
   alternates: {
     canonical: `${BRAND.url}/menu`,
   },

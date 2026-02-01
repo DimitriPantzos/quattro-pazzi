@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/seo/JsonLd"
 export const metadata: Metadata = {
   title: "Contact Us | Location, Hours & Directions",
   description:
-    "Contact Quattro Pazzi Cafe in Fairfield, CT. Located at 1599 Post Road. Find hours, directions, and phone number. Send us a message.",
+    "Contact Quattro Pazzi in Fairfield, CT. Located at 1599 Post Road. Find hours, directions, and phone number. Send us a message.",
   alternates: {
     canonical: `${BRAND.url}/contact`,
   },
@@ -130,7 +130,7 @@ export default function ContactPage() {
                       allowFullScreen
                       loading="lazy"
                       referrerPolicy="no-referrer-when-downgrade"
-                      title="Quattro Pazzi Cafe map"
+                      title="Quattro Pazzi map"
                     />
                   </div>
                 </CardContent>

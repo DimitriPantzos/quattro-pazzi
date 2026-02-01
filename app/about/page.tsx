@@ -10,7 +10,7 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "About Us | Our Story",
   description:
-    "Quattro Pazzi Cafe has been Fairfield, CT's beloved Italian restaurant since 1997. Authentic cuisine, warm hospitality, and a passion for great food.",
+    "Quattro Pazzi has been Fairfield, CT's beloved Italian restaurant since 1997. Authentic cuisine, warm hospitality, and a passion for great food.",
   alternates: {
     canonical: `${BRAND.url}/about`,
   },
@@ -24,7 +24,7 @@ export default function AboutPage() {
       <HeroSection
         eyebrow="Our Story"
         title="A Fairfield Tradition Since 1997"
-        description="For nearly 30 years, Quattro Pazzi Cafe has been bringing authentic Italian cuisine and warm hospitality to Fairfield, Connecticut."
+        description="For nearly 30 years, Quattro Pazzi has been bringing authentic Italian cuisine and warm hospitality to Fairfield, Connecticut."
       />
 
       {/* Chef & Story */}
@@ -51,7 +51,7 @@ export default function AboutPage() {
                 Welcome to <span className="italic">Quattro Pazzi</span>
               </h2>
               <p className="mt-6 text-lg leading-relaxed text-muted-foreground">
-                Since opening our doors in 1997, Quattro Pazzi Cafe has been a cornerstone
+                Since opening our doors in 1997, Quattro Pazzi has been a cornerstone
                 of Fairfield&apos;s dining scene. Our name, meaning &ldquo;Four Crazies&rdquo; in
                 Italian, reflects the passion and spirit we bring to every dish, every glass
                 of wine, and every guest experience.

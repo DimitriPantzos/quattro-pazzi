@@ -29,8 +29,8 @@ const italiana = Italiana({
 export const metadata: Metadata = {
   metadataBase: new URL(BRAND.url),
   title: {
-    default: "Quattro Pazzi Cafe | Italian Restaurant in Fairfield CT",
-    template: "%s | Quattro Pazzi Cafe",
+    default: "Quattro Pazzi, Fairfield CT | Italian Restaurant",
+    template: "%s | Quattro Pazzi",
   },
   description: BRAND.description,
   keywords: [
@@ -49,24 +49,24 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BRAND.url,
-    title: "Quattro Pazzi Cafe",
+    title: "Quattro Pazzi, Fairfield CT",
     description:
-      "Quattro Pazzi Cafe — Fresh, seasonal, and vibrant modern Italian cuisine in Fairfield, CT. Handmade pasta, craft cocktails, and an award-winning wine list since 1997.",
-    siteName: "Quattro Pazzi Cafe",
+      "Quattro Pazzi — Fresh, seasonal, and vibrant modern Italian cuisine. Handmade pasta, craft cocktails, and an award-winning wine list since 1997.",
+    siteName: "Quattro Pazzi",
     images: [
       {
         url: "/images/og/default.png",
         width: 1200,
         height: 630,
-        alt: "Quattro Pazzi Cafe - Italian & Mediterranean Cuisine",
+        alt: "Quattro Pazzi - Italian & Mediterranean Cuisine",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Quattro Pazzi Cafe",
+    title: "Quattro Pazzi, Fairfield CT",
     description:
-      "Quattro Pazzi Cafe — Fresh, seasonal, and vibrant modern Italian cuisine in Fairfield, CT. Handmade pasta, craft cocktails, and an award-winning wine list since 1997.",
+      "Quattro Pazzi — Fresh, seasonal, and vibrant modern Italian cuisine. Handmade pasta, craft cocktails, and an award-winning wine list since 1997.",
   },
   robots: {
     index: true,

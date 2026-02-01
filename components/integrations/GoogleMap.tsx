@@ -5,7 +5,7 @@ type GoogleMapProps = {
   title?: string
 }
 
-export function GoogleMap({ height = 350, title = "Quattro Pazzi Cafe map" }: GoogleMapProps) {
+export function GoogleMap({ height = 350, title = "Quattro Pazzi map" }: GoogleMapProps) {
   return (
     <div className="overflow-hidden rounded-xl border border-border">
       <iframe

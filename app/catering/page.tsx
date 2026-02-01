@@ -9,7 +9,7 @@ import { BRAND } from "@/lib/locations"
 export const metadata: Metadata = {
   title: "Catering | Italian Catering in Fairfield CT",
   description:
-    "Quattro Pazzi Cafe catering for events of all sizes. Authentic Italian cuisine for corporate events, celebrations, and private gatherings in Fairfield, CT.",
+    "Quattro Pazzi catering for events of all sizes. Authentic Italian cuisine for corporate events, celebrations, and private gatherings in Fairfield, CT.",
   alternates: {
     canonical: `${BRAND.url}/catering`,
   },

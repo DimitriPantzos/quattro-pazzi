@@ -8,7 +8,7 @@ import { LOCATION, BRAND } from "@/lib/locations"
 export const metadata: Metadata = {
   title: "Reservations | Book a Table",
   description:
-    "Make a reservation at Quattro Pazzi Cafe in Fairfield, CT. Book online through Toast Tables or call us. Walk-ins always welcome.",
+    "Make a reservation at Quattro Pazzi in Fairfield, CT. Book online through Toast Tables or call us. Walk-ins always welcome.",
   alternates: {
     canonical: `${BRAND.url}/reservations`,
   },

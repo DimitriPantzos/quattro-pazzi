@@ -9,7 +9,7 @@ import { LOCATION, BRAND } from "@/lib/locations"
 export const metadata: Metadata = {
   title: "Order Online | Pickup & Delivery",
   description:
-    "Order online from Quattro Pazzi Cafe in Fairfield, CT. Pickup via Toast or delivery via Uber Eats. Authentic Italian food delivered to your door.",
+    "Order online from Quattro Pazzi in Fairfield, CT. Pickup via Toast or delivery via Uber Eats. Authentic Italian food delivered to your door.",
   alternates: {
     canonical: `${BRAND.url}/order`,
   },

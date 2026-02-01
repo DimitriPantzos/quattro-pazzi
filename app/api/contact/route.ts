@@ -18,7 +18,7 @@ export async function POST(request: Request) {
       const resend = new Resend(process.env.RESEND_API_KEY)
 
       await resend.emails.send({
-        from: "Quattro Pazzi Cafe <noreply@quattropazzi.com>",
+        from: "Quattro Pazzi <noreply@quattropazzi.com>",
         to: ["info@quattropazzi.com"],
         subject: `Contact Form: ${data.subject}`,
         text: `New contact form submission:\n\nName: ${data.name}\nEmail: ${data.email}\nSubject: ${data.subject}\n\nMessage:\n${data.message}`,

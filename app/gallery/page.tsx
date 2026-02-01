@@ -8,7 +8,7 @@ import { BRAND, SOCIAL } from "@/lib/locations"
 export const metadata: Metadata = {
   title: "Gallery | Photos",
   description:
-    "Browse photos of Quattro Pazzi Cafe in Fairfield, CT. Our food, restaurant, events, and more.",
+    "Browse photos of Quattro Pazzi in Fairfield, CT. Our food, restaurant, events, and more.",
   alternates: {
     canonical: `${BRAND.url}/gallery`,
   },

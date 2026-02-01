@@ -56,11 +56,11 @@ export const SOCIAL = {
   instagram: "https://instagram.com/quattropazzi",
   instagramHandle: "@quattropazzi",
   facebook: "https://facebook.com/quattropazzicafe",
-  facebookHandle: "Quattro Pazzi Cafe",
+  facebookHandle: "Quattro Pazzi",
 } as const
 
 export const BRAND = {
-  name: "Quattro Pazzi Cafe",
+  name: "Quattro Pazzi",
   tagline: "Italian & Mediterranean Cuisine",
   description:
     "Authentic Italian and Mediterranean dining in Fairfield, CT. Handmade pasta, fresh seafood, craft cocktails, and an award-winning wine list. Private dining and catering available. Est. 1997.",

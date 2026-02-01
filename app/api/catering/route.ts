@@ -22,7 +22,7 @@ export async function POST(request: Request) {
       const resend = new Resend(process.env.RESEND_API_KEY)
 
       await resend.emails.send({
-        from: "Quattro Pazzi Cafe <noreply@quattropazzi.com>",
+        from: "Quattro Pazzi <noreply@quattropazzi.com>",
         to: ["info@quattropazzi.com"],
         subject: `Catering Inquiry from ${data.name}`,
         text: `New catering inquiry:\n\nName: ${data.name}\nEmail: ${data.email}\nPhone: ${data.phone || "Not provided"}\nEvent Date: ${data.date}\nGuest Count: ${data.guests}\nEvent Type: ${data.type || "Not specified"}\nBudget: ${data.budget || "Not specified"}\n\nAdditional Details:\n${data.message || "None"}`,
