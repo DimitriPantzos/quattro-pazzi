@@ -25,6 +25,13 @@ export function MenuItem({ item }: MenuItemProps) {
           </p>
         )}
       </div>
+      {item.price && (
+        <div className="flex-shrink-0">
+          <span className="font-sans text-base font-semibold text-foreground">
+            ${item.price}
+          </span>
+        </div>
+      )}
     </div>
   )
 }

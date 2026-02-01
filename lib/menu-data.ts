@@ -1,6 +1,7 @@
 export type MenuItem = {
   name: string
   description?: string
+  price?: number
   tags?: string[]
 }
 
@@ -68,37 +69,41 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     label: "Lunch",
     sections: [
       {
-        title: "Starters",
+        title: "Appetizers & Salads",
         items: [
-          { name: "Soup of the Day", description: "Chef's daily selection, served with fresh bread" },
-          { name: "Bruschetta", description: "Fresh tomatoes, basil, garlic on grilled bread" },
-          { name: "Calamari", description: "Lightly fried with marinara and lemon aioli" },
+          { name: "Spicy Shrimp", price: 18, description: "Cherry tomatoes, butter, garlic, white wine, parsley & Calabrian chilies" },
+          { name: "Fried Montauk Calamari", price: 18, description: "With spicy marinara sauce" },
+          { name: "Bruschetta", price: 13, description: "Toasted Italian sesame bread, tomatoes, onions, basil, balsamic reduction" },
+          { name: "Baked Clams Oreganata", price: 18, description: "Breadcrumb oreganata, lemon & white wine" },
+          { name: "Breaded Eggplant Tower", price: 15, description: "Topped with mozzarella and tomato sauce" },
+          { name: "Classic Caesar", price: 14, description: "House made croutons & parmigiano shaving" },
+          { name: "Avocado Salad", price: 16, description: "Endive, tomatoes, onions, Romaine, lemon & parmigiano cheese", tags: ["GF"] },
+          { name: "Quattro Salad", price: 15, description: "Endive, radicchio, arugula, frisée, Gorgonzola, white balsamic dressing", tags: ["GF"] },
         ],
       },
       {
-        title: "Sandwiches & Panini",
+        title: "Pasta",
         items: [
-          { name: "Chicken Pesto Panini", description: "Grilled chicken, fresh mozzarella, roasted peppers, pesto on ciabatta" },
-          { name: "Italian Club", description: "Prosciutto, capicola, fresh mozzarella, lettuce, tomato, balsamic aioli" },
-          { name: "Eggplant Parmigiana Panini", description: "Breaded eggplant, marinara, melted mozzarella on ciabatta" },
-          { name: "Grilled Salmon BLT", description: "Grilled salmon, bacon, lettuce, tomato, herb mayo on sourdough" },
+          { name: "Rigatoni Buttera", price: 28, description: "Hot sausage & sweet peas in a pink sauce, topped with ricotta cheese" },
+          { name: "Cavatelli Marcopolo", price: 29, description: "Chicken, sun dried tomatoes, broccoli in garlic & oil sauce" },
+          { name: "Cavatelli w/ Pesto Shrimp", price: 28, description: "White shrimp, pesto sauce & arugula", tags: ["GF"] },
+          { name: "Gnocchi w/Pesto", price: 27, description: "Potato gnocchi, burrata cheese, pignoli nuts" },
+          { name: "Four Cheese Tortelloni", price: 27, description: "Peas, prosciutto, mushrooms & cream sauce", tags: ["GF"] },
+          { name: "Spicy Rigatoni w/Chicken", price: 28, description: "Tender pieces of chicken, sun dried tomatoes in pink sauce", tags: ["GF"] },
+          { name: "Linguini Pescatore", price: 32, description: "Shrimp, scallops, mussels & manilla clams in a spicy marinara sauce" },
+          { name: "Fettuccine Mitty", price: 30, description: "Chopped scallops, shrimp, crab meat in a pink sauce" },
+          { name: "Orecchiette w/Meatballs", price: 28, description: "Beef & pork meatballs in tomato sauce" },
         ],
       },
       {
-        title: "Lunch Pastas",
+        title: "Entrees",
         items: [
-          { name: "Penne alla Vodka" },
-          { name: "Spaghetti Bolognese" },
-          { name: "Fettuccine Alfredo", description: "Add chicken or shrimp" },
-          { name: "Linguine Primavera", description: "Seasonal vegetables in garlic olive oil or cream sauce" },
-        ],
-      },
-      {
-        title: "Salads",
-        items: [
-          { name: "Caesar Salad", description: "Add chicken or shrimp" },
-          { name: "Grilled Chicken Salad", description: "Mixed greens, avocado, tomato, cucumber, balsamic vinaigrette" },
-          { name: "Chopped Italian Salad", description: "Romaine, salami, provolone, chickpeas, pepperoncini, red wine vinaigrette" },
+          { name: "Chicken Sofia Loren", price: 29, description: "Fontina cheese and wine sauce over spinach" },
+          { name: "Kicked Up Chicken Milanese", price: 29, description: "Prosciutto, stracciatella cheese and pesto topped with arugula salad" },
+          { name: "Chicken Picatta", price: 29, description: "Lemon white wine caper sauce over spinach" },
+          { name: "Italian Chicken Parm", price: 29, description: "Tomato sauce, mozzarella & penne pasta", tags: ["GF"] },
+          { name: "Veal Sorrentina", price: 31, description: "Sherry wine and tomato sauce over eggplant, prosciutto & mozzarella" },
+          { name: "Wild Caught Cod", price: 36, description: "Potato purée, julienne vegetables & lemon butter", tags: ["GF"] },
         ],
       },
     ],
