@@ -24,7 +24,7 @@ export default function AboutPage() {
       <HeroSection
         eyebrow="Our Story"
         title="A Fairfield Tradition Since 1997"
-        description="For over 25 years, Quattro Pazzi Cafe has been bringing authentic Italian cuisine and warm hospitality to Fairfield, Connecticut."
+        description="For nearly 30 years, Quattro Pazzi Cafe has been bringing authentic Italian cuisine and warm hospitality to Fairfield, Connecticut."
       />
 
       {/* Chef & Story */}
@@ -151,12 +151,12 @@ export default function AboutPage() {
               </div>
               <div>
                 <h3 className="font-sans text-lg font-semibold text-foreground">
-                  25+ Years of Excellence
+                  Nearly 30 Years of Excellence
                 </h3>
                 <p className="mt-2 text-muted-foreground">
-                  Opened in 1997, we&apos;ve grown from a neighborhood favorite to one of
-                  Fairfield County&apos;s most beloved Italian restaurants, all while
-                  staying true to our roots.
+                  Opened in 1997, we&apos;ve spent nearly three decades growing from a
+                  neighborhood favorite to one of Fairfield County&apos;s most beloved
+                  Italian restaurants, all while staying true to our roots.
                 </p>
               </div>
             </div>
@@ -179,7 +179,7 @@ export default function AboutPage() {
             Come Experience It <span className="italic text-oro-400">Yourself</span>
           </h2>
           <p className="mt-6 text-lg text-white/60">
-            Reserve your table and discover why Fairfield has been coming to Quattro Pazzi for over 25 years.
+            Reserve your table and discover why Fairfield has been coming to Quattro Pazzi for nearly 30 years.
           </p>
           <Button
             asChild
