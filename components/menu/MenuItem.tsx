@@ -25,11 +25,6 @@ export function MenuItem({ item }: MenuItemProps) {
           </p>
         )}
       </div>
-      {item.price && (
-        <span className="shrink-0 font-sans text-sm font-semibold text-rosso-500">
-          ${item.price}
-        </span>
-      )}
     </div>
   )
 }
