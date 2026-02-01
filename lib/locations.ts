@@ -26,30 +26,30 @@ export type Location = {
 
 export const LOCATION: Location = {
   name: "Fairfield",
-  address: "230 Post Road",
+  address: "1599 Post Road",
   city: "Fairfield",
   state: "CT",
   zip: "06824",
-  phone: "2032549900",
-  phoneFormatted: "(203) 254-9900",
+  phone: "2032597417",
+  phoneFormatted: "(203) 259-7417",
   orderUrls: {
-    pickup: "https://www.toasttab.com/quattro-pazzi-cafe",
+    pickup: "https://www.toasttab.com/local/order/quattro-pazzi-fairfield-1599-post-road/r-8df2db2e-e599-4385-81a7-c9d07c23eb8b",
     delivery: "https://www.ubereats.com/store/quattro-pazzi-cafe",
   },
   mapEmbedUrl:
-    "https://www.google.com/maps?q=Quattro+Pazzi+Cafe,+230+Post+Road,+Fairfield,+CT+06824&output=embed",
-  geo: { lat: 41.1415, lng: -73.2613 },
+    "https://www.google.com/maps?q=Quattro+Pazzi+Cafe,+1599+Post+Road,+Fairfield,+CT+06824&output=embed",
+  geo: { lat: 41.1648, lng: -73.2345 },
   hours: [
-    { day: "Monday", open: "11:30 AM", close: "9:00 PM" },
-    { day: "Tuesday", open: "11:30 AM", close: "9:00 PM" },
-    { day: "Wednesday", open: "11:30 AM", close: "9:00 PM" },
-    { day: "Thursday", open: "11:30 AM", close: "9:30 PM" },
-    { day: "Friday", open: "11:30 AM", close: "10:00 PM" },
-    { day: "Saturday", open: "11:30 AM", close: "10:00 PM" },
-    { day: "Sunday", open: "11:00 AM", close: "9:00 PM" },
+    { day: "Monday", open: "11:00 AM", close: "9:00 PM" },
+    { day: "Tuesday", open: "11:00 AM", close: "9:00 PM" },
+    { day: "Wednesday", open: "11:00 AM", close: "9:00 PM" },
+    { day: "Thursday", open: "11:00 AM", close: "9:00 PM" },
+    { day: "Friday", open: "11:00 AM", close: "10:00 PM" },
+    { day: "Saturday", open: "11:00 AM", close: "10:00 PM" },
+    { day: "Sunday", open: "11:00 AM", close: "10:00 PM" },
   ],
   happyHour: "Monday - Friday, 3:00 PM - 6:00 PM",
-  googleMapsUrl: "https://maps.google.com/?q=230+Post+Road+Fairfield+CT+06824",
+  googleMapsUrl: "https://maps.google.com/?q=1599+Post+Road+Fairfield+CT+06824",
 } as const
 
 export const SOCIAL = {

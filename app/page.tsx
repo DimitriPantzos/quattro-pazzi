@@ -14,12 +14,12 @@ const FAQ_ITEMS = [
   {
     question: "What are your hours?",
     answer:
-      "We're open Monday through Wednesday 11:30 AM to 9 PM, Thursday 11:30 AM to 9:30 PM, Friday and Saturday 11:30 AM to 10 PM, and Sunday 11 AM to 9 PM.",
+      "We're open Monday through Thursday 11 AM to 9 PM, and Friday through Sunday 11 AM to 10 PM.",
   },
   {
     question: "Do you take reservations?",
     answer:
-      "Yes! You can reserve through Toast Tables on our Reservations page, or call us directly at (203) 254-9900. Walk-ins are also welcome.",
+      "Yes! You can reserve through Toast Tables on our Reservations page, or call us directly at (203) 259-7417. Walk-ins are also welcome.",
   },
   {
     question: "Do you offer online ordering?",
@@ -182,8 +182,8 @@ export default function HomePage() {
       {/* ====== FULL-BLEED IMAGE BREAK ====== */}
       <section className="relative h-[50vh] min-h-[300px] overflow-hidden sm:h-[60vh]">
         <Image
-          src="/images/hero/interior.jpg"
-          alt="Quattro Pazzi dining room"
+          src="/images/hero/lights.jpg"
+          alt="Quattro Pazzi ambiance"
           fill
           className="object-cover"
           sizes="100vw"
@@ -248,13 +248,16 @@ export default function HomePage() {
       <section className="section-padding bg-crema-base">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div className="overflow-hidden rounded-xl">
-              <Image
-                src="/images/hero/exterior.jpg"
-                alt="Quattro Pazzi exterior"
-                width={800}
-                height={600}
-                className="h-auto w-full object-cover"
+            <div className="overflow-hidden rounded-xl border border-border">
+              <iframe
+                src={LOCATION.mapEmbedUrl}
+                width="100%"
+                height="400"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Quattro Pazzi Cafe map"
               />
             </div>
             <div>
@@ -281,10 +284,8 @@ export default function HomePage() {
                   </a>
                 </p>
                 <div className="text-sm">
-                  <p>Mon&ndash;Wed: 11:30 AM &ndash; 9:00 PM</p>
-                  <p>Thu: 11:30 AM &ndash; 9:30 PM</p>
-                  <p>Fri&ndash;Sat: 11:30 AM &ndash; 10:00 PM</p>
-                  <p>Sun: 11:00 AM &ndash; 9:00 PM</p>
+                  <p>Mon&ndash;Thu: 11:00 AM &ndash; 9:00 PM</p>
+                  <p>Fri&ndash;Sun: 11:00 AM &ndash; 10:00 PM</p>
                   <p className="mt-2 font-medium text-oro-600">
                     Happy Hour: {LOCATION.happyHour}
                   </p>

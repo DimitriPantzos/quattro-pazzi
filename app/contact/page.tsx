@@ -10,7 +10,7 @@ import { JsonLd } from "@/components/seo/JsonLd"
 export const metadata: Metadata = {
   title: "Contact Us | Location, Hours & Directions",
   description:
-    "Contact Quattro Pazzi Cafe in Fairfield, CT. Located at 230 Post Road. Find hours, directions, and phone number. Send us a message.",
+    "Contact Quattro Pazzi Cafe in Fairfield, CT. Located at 1599 Post Road. Find hours, directions, and phone number. Send us a message.",
   alternates: {
     canonical: `${BRAND.url}/contact`,
   },
@@ -47,27 +47,15 @@ export default function ContactPage() {
           openingHoursSpecification: [
             {
               "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Monday", "Tuesday", "Wednesday"],
-              opens: "11:30",
-              closes: "21:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Thursday",
-              opens: "11:30",
-              closes: "21:30",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Friday", "Saturday"],
-              opens: "11:30",
-              closes: "22:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Sunday",
+              dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
               opens: "11:00",
               closes: "21:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Friday", "Saturday", "Sunday"],
+              opens: "11:00",
+              closes: "22:00",
             },
           ],
         }}

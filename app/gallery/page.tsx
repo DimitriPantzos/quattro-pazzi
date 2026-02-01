@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 const GALLERY_ITEMS = [
   { src: "/images/food/filet.jpg", alt: "Filet mignon with crispy onions and gnocchi", tall: true },
   { src: "/images/food/ravioli.jpg", alt: "Handmade ravioli with basil and tomato sauce", tall: false },
-  { src: "/images/hero/interior.jpg", alt: "Quattro Pazzi dining room", tall: false },
+  { src: "/images/hero/lights.jpg", alt: "Quattro Pazzi ambiance", tall: false },
   { src: "/images/food/seafood.jpg", alt: "Seafood antipasto with cannellini beans", tall: true },
   { src: "/images/food/gnocchi.jpg", alt: "Gnocchi bolognese on marble", tall: false },
-  { src: "/images/hero/exterior.jpg", alt: "Quattro Pazzi restaurant exterior", tall: true },
+  { src: "/images/food/fish.jpg", alt: "Pan-seared fish with vegetables", tall: true },
   { src: "/images/food/penne.jpg", alt: "Penne with ricotta and seasonal vegetables", tall: false },
   { src: "/images/food/tartufo.jpg", alt: "Tartufo dessert", tall: true },
   { src: "/images/food/chicken.jpg", alt: "Chicken with butternut squash and sage", tall: false },
