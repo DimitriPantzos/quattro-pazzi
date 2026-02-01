@@ -65,7 +65,7 @@ export const BRAND = {
   description:
     "Authentic Italian and Mediterranean dining in Fairfield, CT. Handmade pasta, fresh seafood, craft cocktails, and an award-winning wine list. Private dining and catering available. Est. 1997.",
   email: "info@quattropazzi.com",
-  url: "https://quattropazzi.com",
+  url: "https://quattro-pazzi.vercel.app",
   founded: 1997,
   chef: "Chef Gino",
   cuisines: ["Italian", "Mediterranean"],
