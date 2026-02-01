@@ -2,13 +2,13 @@ import type { Metadata } from "next"
 import { Phone, Clock, Users } from "lucide-react"
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema"
 import { HeroSection } from "@/components/sections/HeroSection"
-import { OpenTableWidget } from "@/components/integrations/OpenTableWidget"
+import { ReservationWidget } from "@/components/integrations/OpenTableWidget"
 import { LOCATION, BRAND } from "@/lib/locations"
 
 export const metadata: Metadata = {
   title: "Reservations | Book a Table",
   description:
-    "Make a reservation at Quattro Pazzi Cafe in Fairfield, CT. Book online through OpenTable or call us. Walk-ins always welcome.",
+    "Make a reservation at Quattro Pazzi Cafe in Fairfield, CT. Book online through Toast Tables or call us. Walk-ins always welcome.",
   alternates: {
     canonical: `${BRAND.url}/reservations`,
   },
@@ -22,12 +22,12 @@ export default function ReservationsPage() {
       <HeroSection
         eyebrow="Reservations"
         title="Reserve Your Table"
-        description="Book online through OpenTable or call us directly. Walk-ins are always welcome, but reservations are recommended for dinner and weekends."
+        description="Book online or call us directly. Walk-ins are always welcome, but reservations are recommended for dinner and weekends."
       />
 
       <section className="section-padding">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <OpenTableWidget />
+          <ReservationWidget />
 
           <div className="mt-12 grid gap-6 sm:grid-cols-3">
             <div className="rounded-lg border border-border bg-card p-5 text-center">

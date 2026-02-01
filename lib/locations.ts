@@ -72,7 +72,6 @@ export const BRAND = {
   priceRange: "$$",
 } as const
 
-export const OPENTABLE = {
-  restaurantId: "",
-  widgetUrl: "https://www.opentable.com/restref/client/?restref=quattro-pazzi-cafe",
+export const RESERVATIONS = {
+  url: "https://tables.toasttab.com/restaurants/8df2db2e-e599-4385-81a7-c9d07c23eb8b/reserve?partySize=2",
 } as const
