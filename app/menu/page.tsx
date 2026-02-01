@@ -7,7 +7,7 @@ import { BRAND } from "@/lib/locations"
 import { JsonLd } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Menu | Dinner, Lunch, Lunch Price Fix $20 & Wine",
+  title: "Menu | Dinner, Lunch, Lunch Price Fix $20 & Drinks",
   description:
     "Explore the Quattro Pazzi menu. $20 Lunch Price Fix special Monday-Friday. Authentic Italian pasta, seafood, steaks, salads, and extensive wine and cocktail list.",
   alternates: {
@@ -30,7 +30,7 @@ export default function MenuPage() {
             { "@type": "MenuSection", name: "Lunch Price Fix $20" },
             { "@type": "MenuSection", name: "Lunch" },
             { "@type": "MenuSection", name: "Dinner" },
-            { "@type": "MenuSection", name: "Wine & Cocktails" },
+            { "@type": "MenuSection", name: "Drinks" },
           ],
         }}
       />

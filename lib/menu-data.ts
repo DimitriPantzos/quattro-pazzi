@@ -222,7 +222,7 @@ export const MENU_CATEGORIES: MenuCategory[] = [
   },
   {
     id: "wine",
-    label: "Wine & Cocktails",
+    label: "Drinks",
     sections: [
       {
         title: "Prosecco / Rosé",
