@@ -1,0 +1,333 @@
+/* ============================================
+   QUATTRO PAZZI CAFE DESIGN SYSTEM
+   "Rosso & Crema"
+
+   Warm Italian cream with bold red accents.
+   Espresso browns and Mediterranean touches.
+   ============================================ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================
+   DESIGN TOKENS
+   ============================================ */
+
+:root {
+  /* === CREMA - Base Surfaces === */
+  --crema-white: #FFFDF8;
+  --crema-base: #FAF6EF;
+  --crema-raised: #FFFFFF;
+  --crema-elevated: #F5F0E6;
+  --crema-float: #FFFFFF;
+  --crema-hover: #EDE7DB;
+  --crema-muted: #E3DCD0;
+
+  /* === ROSSO - Primary Accent (Brand: #D2202F) === */
+  --rosso-50: #FEF2F2;
+  --rosso-100: #FEE2E2;
+  --rosso-200: #FECACA;
+  --rosso-300: #FCA5A5;
+  --rosso-400: #F56565;
+  --rosso-500: #D2202F;
+  --rosso-600: #B91C29;
+  --rosso-700: #9B1724;
+  --rosso-800: #7F131E;
+  --rosso-900: #6B1019;
+
+  /* === ESPRESSO - Secondary Accent (Brand: #462210) === */
+  --espresso-50: #FAF6F1;
+  --espresso-100: #F0E7DA;
+  --espresso-200: #E0CEB5;
+  --espresso-300: #CCAE88;
+  --espresso-400: #B08C5A;
+  --espresso-500: #7A4E28;
+  --espresso-600: #462210;
+  --espresso-700: #391C0D;
+  --espresso-800: #2D160A;
+  --espresso-900: #221108;
+
+  /* === ORO - Tertiary Accent (Gold) === */
+  --oro-50: #FEFBF3;
+  --oro-100: #FDF3D8;
+  --oro-200: #FAE5AD;
+  --oro-300: #F5D17A;
+  --oro-400: #EEBB4A;
+  --oro-500: #E5A320;
+  --oro-600: #C88A16;
+  --oro-700: #A46F11;
+  --oro-800: #84590F;
+  --oro-900: #6C480D;
+
+  /* === OLIVA - Accent (Mediterranean Green) === */
+  --oliva-50: #F5F7F2;
+  --oliva-100: #E6EBE0;
+  --oliva-200: #CDD7C1;
+  --oliva-300: #ADBF9A;
+  --oliva-400: #94A87A;
+  --oliva-500: #7B8A5E;
+  --oliva-600: #63704C;
+  --oliva-700: #4F593D;
+  --oliva-800: #3F4731;
+  --oliva-900: #333A28;
+
+  /* === TEXT HIERARCHY === */
+  --text-primary: #1A1714;
+  --text-secondary: #6B635A;
+  --text-tertiary: #9C948A;
+  --text-inverse: #FFFDF8;
+
+  /* === BORDERS & DIVIDERS === */
+  --border-subtle: rgba(26, 23, 20, 0.06);
+  --border-default: rgba(26, 23, 20, 0.1);
+  --border-strong: rgba(26, 23, 20, 0.15);
+  --border-focus: var(--rosso-500);
+
+  /* === SEMANTIC COLORS === */
+  --success-base: #059669;
+  --success-muted: rgba(5, 150, 105, 0.1);
+  --warning-base: #D97706;
+  --warning-muted: rgba(217, 119, 6, 0.1);
+  --error-base: #DC2626;
+  --error-muted: rgba(220, 38, 38, 0.1);
+
+  /* === SHADOWS === */
+  --shadow-sm: 0 1px 3px rgba(26, 23, 20, 0.06), 0 1px 2px rgba(26, 23, 20, 0.04);
+  --shadow-md: 0 4px 6px rgba(26, 23, 20, 0.05), 0 2px 4px rgba(26, 23, 20, 0.04);
+  --shadow-lg: 0 10px 15px rgba(26, 23, 20, 0.06), 0 4px 6px rgba(26, 23, 20, 0.04);
+  --shadow-xl: 0 20px 25px rgba(26, 23, 20, 0.08), 0 8px 10px rgba(26, 23, 20, 0.04);
+  --shadow-card: 0 1px 3px rgba(26, 23, 20, 0.08), 0 1px 2px rgba(26, 23, 20, 0.06), 0 0 0 1px rgba(26, 23, 20, 0.04);
+  --shadow-card-hover: 0 8px 16px rgba(26, 23, 20, 0.08), 0 4px 8px rgba(26, 23, 20, 0.04), 0 0 0 1px rgba(210, 32, 47, 0.15);
+
+  /* === RADII === */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* === TRANSITIONS === */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+
+  /* === COMPONENT TOKENS (shadcn/ui mapping) === */
+  --background: var(--crema-base);
+  --foreground: var(--text-primary);
+  --card: var(--crema-raised);
+  --card-foreground: var(--text-primary);
+  --popover: var(--crema-float);
+  --popover-foreground: var(--text-primary);
+  --primary: var(--rosso-500);
+  --primary-foreground: var(--text-inverse);
+  --secondary: var(--crema-elevated);
+  --secondary-foreground: var(--text-primary);
+  --muted: var(--crema-muted);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--crema-hover);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--error-base);
+  --destructive-foreground: var(--text-inverse);
+  --border: var(--border-default);
+  --input: var(--border-default);
+  --ring: var(--rosso-500);
+  --radius: var(--radius-lg);
+
+  --chart-1: var(--rosso-500);
+  --chart-2: var(--oro-500);
+  --chart-3: var(--oliva-500);
+  --chart-4: var(--warning-base);
+  --chart-5: #2563EB;
+}
+
+/* ============================================
+   TAILWIND THEME MAPPING
+   ============================================ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-crema-white: var(--crema-white);
+  --color-crema-base: var(--crema-base);
+  --color-crema-raised: var(--crema-raised);
+  --color-crema-elevated: var(--crema-elevated);
+  --color-crema-hover: var(--crema-hover);
+  --color-crema-muted: var(--crema-muted);
+
+  --color-rosso-50: var(--rosso-50);
+  --color-rosso-100: var(--rosso-100);
+  --color-rosso-200: var(--rosso-200);
+  --color-rosso-300: var(--rosso-300);
+  --color-rosso-400: var(--rosso-400);
+  --color-rosso-500: var(--rosso-500);
+  --color-rosso-600: var(--rosso-600);
+  --color-rosso-700: var(--rosso-700);
+  --color-rosso-800: var(--rosso-800);
+  --color-rosso-900: var(--rosso-900);
+
+  --color-espresso-50: var(--espresso-50);
+  --color-espresso-100: var(--espresso-100);
+  --color-espresso-200: var(--espresso-200);
+  --color-espresso-300: var(--espresso-300);
+  --color-espresso-400: var(--espresso-400);
+  --color-espresso-500: var(--espresso-500);
+  --color-espresso-600: var(--espresso-600);
+  --color-espresso-700: var(--espresso-700);
+  --color-espresso-800: var(--espresso-800);
+  --color-espresso-900: var(--espresso-900);
+
+  --color-oro-50: var(--oro-50);
+  --color-oro-100: var(--oro-100);
+  --color-oro-200: var(--oro-200);
+  --color-oro-300: var(--oro-300);
+  --color-oro-400: var(--oro-400);
+  --color-oro-500: var(--oro-500);
+  --color-oro-600: var(--oro-600);
+  --color-oro-700: var(--oro-700);
+  --color-oro-800: var(--oro-800);
+  --color-oro-900: var(--oro-900);
+
+  --color-oliva-50: var(--oliva-50);
+  --color-oliva-100: var(--oliva-100);
+  --color-oliva-200: var(--oliva-200);
+  --color-oliva-300: var(--oliva-300);
+  --color-oliva-400: var(--oliva-400);
+  --color-oliva-500: var(--oliva-500);
+  --color-oliva-600: var(--oliva-600);
+  --color-oliva-700: var(--oliva-700);
+  --color-oliva-800: var(--oliva-800);
+  --color-oliva-900: var(--oliva-900);
+
+  --color-success: var(--success-base);
+  --color-warning: var(--warning-base);
+  --color-error: var(--error-base);
+
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-decorative: 'Italiana', Georgia, serif;
+
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+@layer base {
+  * {
+    @apply border-border;
+    outline-color: var(--ring);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    letter-spacing: -0.006em;
+    font-weight: 400;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: rgba(210, 32, 47, 0.15);
+    color: var(--text-primary);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up var(--duration-normal) var(--ease-smooth) forwards;
+}
+
+.animate-fade-in {
+  animation: fade-in var(--duration-normal) var(--ease-smooth) forwards;
+}
+
+/* ============================================
+   COMPONENT PATTERNS
+   ============================================ */
+
+.card-interactive {
+  transition:
+    transform var(--duration-fast) var(--ease-smooth),
+    box-shadow var(--duration-fast) var(--ease-smooth);
+}
+
+.card-interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
