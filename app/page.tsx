@@ -85,7 +85,7 @@ export default function HomePage() {
         <div className="relative flex h-full flex-col justify-end pb-16 sm:pb-24 lg:pb-32">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <p
-              className="text-sm font-normal uppercase tracking-[0.4em] text-oro-400"
+              className="text-sm font-normal uppercase tracking-[0.4em] text-white/70"
               style={{ fontFamily: "var(--font-decorative)" }}
             >
               Est. {BRAND.founded} &bull; {LOCATION.city}, {LOCATION.state}
