@@ -33,10 +33,10 @@ export default function AboutPage() {
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-xl">
               <Image
-                src="/images/interior/chef-gino.jpg"
-                alt="Chef Gino"
+                src="/images/food/ravioli-cocktails.jpg"
+                alt="Burrata ravioli with craft cocktails at the bar"
                 width={600}
-                height={500}
+                height={800}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -45,7 +45,7 @@ export default function AboutPage() {
                 className="text-sm uppercase tracking-[0.3em] text-rosso-500"
                 style={{ fontFamily: "var(--font-decorative)" }}
               >
-                Meet the Chef
+                Our Story
               </p>
               <h2 className="mt-4 text-3xl sm:text-4xl">
                 Welcome to <span className="italic">Quattro Pazzi</span>
