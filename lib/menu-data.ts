@@ -109,32 +109,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     ],
   },
   {
-    id: "happy-hour",
-    label: "Happy Hour",
-    sections: [
-      {
-        title: "Happy Hour Bites",
-        description: "Monday - Friday, 3 PM - 6 PM",
-        items: [
-          { name: "Bruschetta" },
-          { name: "Meatballs (3)" },
-          { name: "Calamari" },
-          { name: "Margherita Flatbread" },
-          { name: "Arancini (3)", description: "Fried risotto balls with marinara" },
-        ],
-      },
-      {
-        title: "Happy Hour Drinks",
-        items: [
-          { name: "House Wine", description: "Red or white by the glass" },
-          { name: "Draft Beer", description: "Selection of local and imported beers" },
-          { name: "Classic Cocktails", description: "Negroni, Aperol Spritz, or Limoncello Martini" },
-          { name: "Prosecco", description: "Italian sparkling wine" },
-        ],
-      },
-    ],
-  },
-  {
     id: "brunch",
     label: "Brunch",
     sections: [
