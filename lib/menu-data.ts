@@ -20,10 +20,10 @@ export type MenuCategory = {
 export const MENU_CATEGORIES: MenuCategory[] = [
   {
     id: "prix-fixe",
-    label: "Prix Fixe - $20",
+    label: "Lunch Price Fix $20",
     sections: [
       {
-        title: "Prix-Fixe Menu",
+        title: "Lunch Price Fix $20",
         description: "Monday to Friday - $20 per person. Choice of cup of Pasta Fagioli or side of House Salad, plus your choice of Salad, Sandwich, Pasta, or Entree",
         items: [],
       },
