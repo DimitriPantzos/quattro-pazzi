@@ -109,33 +109,6 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     ],
   },
   {
-    id: "brunch",
-    label: "Brunch",
-    sections: [
-      {
-        title: "Brunch Favorites",
-        description: "Sunday Brunch, 11 AM - 3 PM",
-        items: [
-          { name: "Eggs Benedict", description: "Poached eggs, Canadian bacon, hollandaise on English muffin with breakfast potatoes" },
-          { name: "Italian Omelette", description: "Prosciutto, mozzarella, roasted peppers, and basil with mixed greens" },
-          { name: "Pancakes", description: "Buttermilk pancakes with fresh berries and maple syrup" },
-          { name: "Avocado Toast", description: "Multigrain toast, smashed avocado, poached eggs, cherry tomatoes, everything seasoning" },
-          { name: "French Toast", description: "Brioche French toast with mascarpone cream and seasonal fruit" },
-          { name: "Brunch Burger", description: "Angus beef, fried egg, bacon, cheddar, brioche bun with fries" },
-        ],
-      },
-      {
-        title: "Brunch Cocktails",
-        items: [
-          { name: "Mimosa", description: "Prosecco and fresh-squeezed orange juice" },
-          { name: "Bellini", description: "Prosecco and peach puree" },
-          { name: "Bloody Mary", description: "House-made mix with premium vodka" },
-          { name: "Espresso Martini", description: "Vodka, Kahlua, fresh espresso" },
-        ],
-      },
-    ],
-  },
-  {
     id: "wine",
     label: "Wine & Cocktails",
     sections: [
