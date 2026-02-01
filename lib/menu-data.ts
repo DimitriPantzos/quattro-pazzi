@@ -19,52 +19,6 @@ export type MenuCategory = {
 
 export const MENU_CATEGORIES: MenuCategory[] = [
   {
-    id: "dinner",
-    label: "Dinner",
-    sections: [
-      {
-        title: "Antipasti",
-        items: [
-          { name: "Bruschetta Pomodoro", description: "Grilled bread topped with fresh tomatoes, basil, garlic, and extra virgin olive oil" },
-          { name: "Calamari Fritti", description: "Lightly fried calamari served with marinara sauce and lemon aioli" },
-          { name: "Burrata", description: "Creamy burrata with roasted peppers, arugula, and aged balsamic" },
-          { name: "Polpette", description: "House-made meatballs in San Marzano tomato sauce with ricotta" },
-          { name: "Antipasto Board", description: "Cured meats, imported cheeses, olives, roasted vegetables, and crostini" },
-        ],
-      },
-      {
-        title: "Insalate",
-        items: [
-          { name: "Caesar Salad", description: "Romaine hearts, house-made Caesar dressing, Parmigiano, and croutons" },
-          { name: "Mediterranean Salad", description: "Mixed greens, cherry tomatoes, cucumber, olives, feta, and lemon vinaigrette" },
-          { name: "Arugula & Pear", description: "Baby arugula, roasted pears, Gorgonzola, candied walnuts, and honey vinaigrette" },
-        ],
-      },
-      {
-        title: "Pasta",
-        items: [
-          { name: "Penne alla Vodka", description: "Penne in a creamy tomato vodka sauce with a touch of crushed red pepper" },
-          { name: "Linguine alle Vongole", description: "Linguine with littleneck clams, white wine, garlic, and fresh parsley" },
-          { name: "Rigatoni Bolognese", description: "Rigatoni with slow-simmered meat sauce and Parmigiano-Reggiano" },
-          { name: "Pappardelle al Ragu", description: "Fresh pappardelle with braised short rib ragu and pecorino" },
-          { name: "Spaghetti Carbonara", description: "Spaghetti with pancetta, egg, Pecorino Romano, and black pepper" },
-          { name: "Gnocchi Sorrentina", description: "Potato gnocchi with fresh mozzarella, basil, and San Marzano tomato sauce" },
-          { name: "Cacio e Pepe", description: "Tonnarelli pasta with Pecorino Romano and black pepper" },
-        ],
-      },
-      {
-        title: "Secondi",
-        items: [
-          { name: "Chicken Parmigiana", description: "Breaded chicken cutlet with mozzarella and marinara, served with spaghetti" },
-          { name: "Branzino", description: "Pan-seared Mediterranean sea bass with lemon, capers, and roasted vegetables" },
-          { name: "Veal Marsala", description: "Tender veal scaloppine in Marsala wine sauce with mushrooms" },
-          { name: "Salmon al Forno", description: "Oven-roasted salmon with herb crust, roasted potatoes, and seasonal vegetables" },
-          { name: "NY Strip Steak", description: "12 oz grilled NY strip with roasted potatoes and sauteed spinach" },
-        ],
-      },
-    ],
-  },
-  {
     id: "lunch",
     label: "Lunch",
     sections: [
@@ -113,32 +67,49 @@ export const MENU_CATEGORIES: MenuCategory[] = [
     label: "Wine & Cocktails",
     sections: [
       {
-        title: "Red Wines by the Glass",
+        title: "White Wine",
         items: [
-          { name: "Chianti Classico", description: "Tuscany, Italy" },
-          { name: "Montepulciano d'Abruzzo", description: "Abruzzo, Italy" },
-          { name: "Barolo", description: "Piedmont, Italy" },
-          { name: "Pinot Noir", description: "Sonoma, California" },
-          { name: "Cabernet Sauvignon", description: "Napa Valley, California" },
+          { name: "Three Finger Chardonnay", price: 14 },
+          { name: "Parolvini Pinot Grigio", price: 13 },
+          { name: "Fernhook Sauvignon Blanc", price: 15 },
+          { name: "Isla Sancerre Blanc", price: 17 },
         ],
       },
       {
-        title: "White Wines by the Glass",
+        title: "Rose & Prosecco",
         items: [
-          { name: "Pinot Grigio", description: "Veneto, Italy" },
-          { name: "Sauvignon Blanc", description: "Marlborough, New Zealand" },
-          { name: "Chardonnay", description: "Sonoma, California" },
-          { name: "Prosecco", description: "Veneto, Italy" },
+          { name: "Primitivo Rosato", price: 13 },
+          { name: "Bisol Prosecco", price: 13 },
         ],
       },
       {
-        title: "Signature Cocktails",
+        title: "Red Wine",
         items: [
-          { name: "Classic Negroni", description: "Gin, Campari, sweet vermouth" },
-          { name: "Aperol Spritz", description: "Aperol, Prosecco, soda" },
-          { name: "Limoncello Martini", description: "Vodka, limoncello, fresh lemon" },
-          { name: "Espresso Martini", description: "Vodka, Kahlua, fresh espresso" },
-          { name: "Italian Mule", description: "Limoncello, ginger beer, fresh lime" },
+          { name: "Chianti Classico", price: 14 },
+          { name: "Educated Guess", price: 15 },
+          { name: "Organic Montepulciano", price: 14 },
+          { name: "Duck Pond Pinot Noir", price: 14 },
+          { name: "Ziobaffa Toscana", price: 15 },
+        ],
+      },
+      {
+        title: "Mocktails",
+        description: "$12",
+        items: [
+          { name: "Blueberry Fizz", description: "Blueberry purée, club soda, lime, syrup" },
+          { name: "Tropical Passion", description: "Pineapple, passion fruit purée club soda" },
+          { name: "Peach Spritz", description: "Peach purée, lime juice, syrup, club soda" },
+          { name: "Mango Mojito", description: "Fresh mango purée, mint, syrup, lime juice, club soda" },
+        ],
+      },
+      {
+        title: "Cocktails",
+        description: "$16",
+        items: [
+          { name: "Cosmo Pazzi", description: "Tito's vodka, malibu Rum, cranberry & lime juice, coconut rim" },
+          { name: "Paper Plane", description: "Bourbon, Aperol, amaretto, lime juice" },
+          { name: "Sicilian Negroni", description: "Orange gin, Campari, sweet vermouth" },
+          { name: "Aperol Margarita", description: "Aperol, tequila blanco, lime juice, syrup" },
         ],
       },
     ],

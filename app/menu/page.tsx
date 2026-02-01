@@ -7,9 +7,9 @@ import { BRAND } from "@/lib/locations"
 import { JsonLd } from "@/components/seo/JsonLd"
 
 export const metadata: Metadata = {
-  title: "Menu | Dinner, Lunch & Wine",
+  title: "Menu | Lunch & Wine",
   description:
-    "Explore the Quattro Pazzi menu. Authentic Italian pasta, seafood, steaks, salads, and more. Extensive wine list.",
+    "Explore the Quattro Pazzi lunch menu. Authentic Italian pasta, seafood, salads, appetizers, and extensive wine and cocktail list.",
   alternates: {
     canonical: `${BRAND.url}/menu`,
   },
@@ -27,7 +27,6 @@ export default function MenuPage() {
           name: `${BRAND.name} Menu`,
           description: "Authentic Italian and Mediterranean cuisine featuring handmade pasta, fresh seafood, and an award-winning wine list.",
           hasMenuSection: [
-            { "@type": "MenuSection", name: "Dinner" },
             { "@type": "MenuSection", name: "Lunch" },
             { "@type": "MenuSection", name: "Wine & Cocktails" },
           ],
