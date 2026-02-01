@@ -182,8 +182,8 @@ export default function HomePage() {
       {/* ====== FULL-BLEED IMAGE BREAK ====== */}
       <section className="relative h-[50vh] min-h-[300px] overflow-hidden sm:h-[60vh]">
         <Image
-          src="/images/hero/lights.jpg"
-          alt="Quattro Pazzi ambiance"
+          src="/images/hero/dining-room.jpg"
+          alt="Quattro Pazzi dining room"
           fill
           className="object-cover"
           sizes="100vw"

@@ -70,8 +70,8 @@ export default function AboutPage() {
       {/* Full-bleed image break */}
       <section className="relative h-[40vh] min-h-[250px] overflow-hidden">
         <Image
-          src="/images/interior/kitchen.jpg"
-          alt="Quattro Pazzi kitchen"
+          src="/images/hero/bar.jpg"
+          alt="Quattro Pazzi bar"
           fill
           className="object-cover"
           sizes="100vw"
