@@ -80,8 +80,8 @@ export default function HomePage() {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
         <div className="relative flex h-full flex-col justify-end pb-16 sm:pb-24 lg:pb-32">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
             <p
@@ -90,10 +90,10 @@ export default function HomePage() {
             >
               Est. {BRAND.founded} &bull; {LOCATION.city}, {LOCATION.state}
             </p>
-            <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] text-white sm:text-7xl lg:text-8xl">
+            <h1 className="mt-4 max-w-3xl text-5xl leading-[1.05] text-white drop-shadow-lg sm:text-7xl lg:text-8xl">
               The Art of
               <br />
-              <span className="italic text-oro-400">Italian</span> Dining
+              <span className="italic text-rosso-400">Italian</span> Dining
             </h1>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/70 sm:text-xl">
               Handmade pasta, fresh seafood, craft cocktails, and an award-winning wine list.

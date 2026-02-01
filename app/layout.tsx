@@ -49,7 +49,10 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: BRAND.url,
-    siteName: BRAND.name,
+    title: "Quattro Pazzi Cafe | Fairfield, CT",
+    description:
+      "Fresh, seasonal, and vibrant modern Italian cuisine. Handmade pasta, craft cocktails, and an award-winning wine list since 1997.",
+    siteName: "Quattro Pazzi Cafe",
     images: [
       {
         url: "/images/og/default.png",
@@ -61,6 +64,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    title: "Quattro Pazzi Cafe | Fairfield, CT",
+    description:
+      "Fresh, seasonal, and vibrant modern Italian cuisine. Handmade pasta, craft cocktails, and an award-winning wine list since 1997.",
   },
   robots: {
     index: true,
