@@ -34,7 +34,7 @@ const FAQ_ITEMS = [
   {
     question: "Do you have a happy hour?",
     answer:
-      "Yes! Happy hour is Monday through Friday from 3 PM to 6 PM with discounted bites, wines, and cocktails.",
+      "Yes! Happy hour is Monday through Friday from 3 PM to 6 PM.",
   },
   {
     question: "Do you have private dining?",
