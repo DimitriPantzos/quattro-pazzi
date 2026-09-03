@@ -48,13 +48,13 @@ export default function ContactPage() {
             {
               "@type": "OpeningHoursSpecification",
               dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"],
-              opens: "11:00",
+              opens: "11:30",
               closes: "21:00",
             },
             {
               "@type": "OpeningHoursSpecification",
               dayOfWeek: ["Friday", "Saturday", "Sunday"],
-              opens: "11:00",
+              opens: "11:30",
               closes: "22:00",
             },
           ],

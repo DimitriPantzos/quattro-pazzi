@@ -74,9 +74,9 @@ export function Footer() {
               <li className="flex items-start gap-2">
                 <Clock className="mt-0.5 h-4 w-4 shrink-0" />
                 <span>
-                  Mon&ndash;Thu: 11 AM &ndash; 9 PM
+                  Mon&ndash;Thu: 11:30 AM &ndash; 9 PM
                   <br />
-                  Fri&ndash;Sun: 11 AM &ndash; 10 PM
+                  Fri&ndash;Sun: 11:30 AM &ndash; 10 PM
                 </span>
               </li>
             </ul>
@@ -116,6 +116,11 @@ export function Footer() {
               <li>
                 <Link href="/about" className="text-muted-foreground hover:text-foreground">
                   About Us
+                </Link>
+              </li>
+              <li>
+                <Link href="/gallery" className="text-muted-foreground hover:text-foreground">
+                  Gallery
                 </Link>
               </li>
               <li>

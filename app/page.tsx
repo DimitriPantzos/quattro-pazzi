@@ -14,7 +14,7 @@ const FAQ_ITEMS = [
   {
     question: "What are your hours?",
     answer:
-      "We're open Monday through Thursday 11 AM to 9 PM, and Friday through Sunday 11 AM to 10 PM.",
+      "We're open Monday through Thursday 11:30 AM to 9 PM, and Friday through Sunday 11:30 AM to 10 PM.",
   },
   {
     question: "Do you take reservations?",
@@ -24,7 +24,7 @@ const FAQ_ITEMS = [
   {
     question: "Do you offer online ordering?",
     answer:
-      "Yes! You can order pickup through Toast or delivery through Uber Eats. Visit our Order page for direct links.",
+      "Yes! You can order pickup through Toast. Visit our Order page for a direct link.",
   },
   {
     question: "Do you do catering?",
@@ -284,8 +284,8 @@ export default function HomePage() {
                   </a>
                 </p>
                 <div className="text-sm">
-                  <p>Mon&ndash;Thu: 11:00 AM &ndash; 9:00 PM</p>
-                  <p>Fri&ndash;Sun: 11:00 AM &ndash; 10:00 PM</p>
+                  <p>Mon&ndash;Thu: 11:30 AM &ndash; 9:00 PM</p>
+                  <p>Fri&ndash;Sun: 11:30 AM &ndash; 10:00 PM</p>
                   <p className="mt-2 font-medium text-oro-600">
                     Happy Hour: {LOCATION.happyHour}
                   </p>
@@ -361,11 +361,10 @@ export default function HomePage() {
         <div className="relative overflow-hidden bg-espresso-800 px-8 py-16 text-center sm:px-12 sm:py-20">
           <div className="relative z-10">
             <h3 className="text-3xl text-white sm:text-4xl">
-              Order Pickup &amp; Delivery
+              Order Pickup
             </h3>
             <p className="mx-auto mt-4 max-w-md text-white/60">
-              Enjoy Quattro Pazzi at home. Order pickup through Toast
-              or delivery via Uber Eats.
+              Enjoy Quattro Pazzi at home. Order pickup through Toast.
             </p>
             <Button
               asChild
