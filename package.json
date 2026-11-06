@@ -6,7 +6,8 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "node --experimental-strip-types --test tests/catering-inquiry.test.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.12",
