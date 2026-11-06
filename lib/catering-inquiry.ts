@@ -1,7 +1,6 @@
 import { z } from "zod"
 
 export const CATERING_TAGGED_INBOX = "lyfehospitality+catering@mail.grokbot.com"
-export const CATERING_RESTAURANT_INBOX = "info@quattropazzi.com"
 export const CATERING_FROM = "Quattro Pazzi <noreply@quattropazzi.com>"
 
 const BASE_GROK_INBOX = "lyfehospitality@mail.grokbot.com"
@@ -164,42 +163,26 @@ export function resolveRecipients(
   recipientOverride: string | undefined,
   labeledTest: boolean
 ): { ok: true; to: string[] } | { ok: false; error: string } {
-  if (labeledTest) {
-    return { ok: true, to: [CATERING_TAGGED_INBOX] }
+  const taggedOnly = [CATERING_TAGGED_INBOX]
+  if (labeledTest || !recipientOverride?.trim()) {
+    return { ok: true, to: taggedOnly }
   }
 
-  if (recipientOverride && recipientOverride.trim()) {
-    const emails = uniqueEmails(
-      recipientOverride
-        .split(",")
-        .map((email) => email.trim())
-        .filter(Boolean)
-    )
-    if (emails.length === 0 || emails.length > 5) {
-      return { ok: false, error: "Catering recipients are not configured correctly." }
+  const emails = uniqueEmails(
+    recipientOverride
+      .split(",")
+      .map((email) => email.trim())
+      .filter(Boolean)
+  )
+  const exactTaggedInbox =
+    emails.length === 1 && emails[0].toLowerCase() === CATERING_TAGGED_INBOX
+  if (!exactTaggedInbox || emails.some(isForbiddenGrokAddress)) {
+    return {
+      ok: false,
+      error: "Catering mail can only be sent to the Catering Desk inbox.",
     }
-    if (emails.some((email) => !z.string().email().safeParse(email).success)) {
-      return { ok: false, error: "Catering recipients are not configured correctly." }
-    }
-    if (emails.some(isForbiddenGrokAddress)) {
-      return {
-        ok: false,
-        error: "Catering mail cannot copy the base Grok inbox.",
-      }
-    }
-    if (!emails.some((email) => email.toLowerCase() === CATERING_TAGGED_INBOX)) {
-      return {
-        ok: false,
-        error: "Catering mail is missing the Catering Desk inbox.",
-      }
-    }
-    if (emails.filter((email) => email.toLowerCase() === CATERING_TAGGED_INBOX).length > 1) {
-      return { ok: false, error: "Catering recipients are not configured correctly." }
-    }
-    return { ok: true, to: emails }
   }
-
-  return { ok: true, to: [CATERING_TAGGED_INBOX, CATERING_RESTAURANT_INBOX] }
+  return { ok: true, to: taggedOnly }
 }
 
 function containsCardNumber(value: string): boolean {

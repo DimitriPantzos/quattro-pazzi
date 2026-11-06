@@ -2,7 +2,6 @@ import assert from "node:assert/strict"
 import { describe, it } from "node:test"
 import {
   CATERING_FROM,
-  CATERING_RESTAURANT_INBOX,
   CATERING_TAGGED_INBOX,
   buildOutboundEmail,
   createMemoryStore,
@@ -69,7 +68,7 @@ async function submit(
 }
 
 describe("catering inquiry delivery", () => {
-  it("sends one email to the tagged inbox and the restaurant, with the guest as reply-to", async () => {
+  it("sends one email only to the tagged inbox, with the guest as reply-to", async () => {
     const { result, sent } = await submit(inquiry())
 
     assert.equal(result.status, 200)
@@ -77,9 +76,10 @@ describe("catering inquiry delivery", () => {
     assert.equal(result.body.submissionId, SUBMISSION_ID)
     assert.equal(result.body.providerMessageId, "msg_1")
     assert.equal(sent.length, 1)
-    assert.deepEqual(sent[0].to, [CATERING_TAGGED_INBOX, CATERING_RESTAURANT_INBOX])
+    assert.deepEqual(sent[0].to, [CATERING_TAGGED_INBOX])
     assert.equal(sent[0].replyTo, "maria@example.com")
     assert.equal(sent[0].from, CATERING_FROM)
+    assert.equal(sent[0].to.includes("info@quattropazzi.com"), false)
     assert.equal(sent[0].to.includes("lyfehospitality@mail.grokbot.com"), false)
     assert.equal(sent[0].to.includes("maria@example.com"), false)
     assert.match(sent[0].subject, new RegExp(SUBMISSION_ID))
@@ -116,23 +116,28 @@ describe("catering inquiry delivery", () => {
         name: "TEST Quattro catering form",
         message: "TEST — please ignore. Checking the inquiry route.",
       }),
-      { recipientOverride: `${CATERING_TAGGED_INBOX},${CATERING_RESTAURANT_INBOX}` }
+      { recipientOverride: `${CATERING_TAGGED_INBOX},info@quattropazzi.com` }
     )
 
     assert.equal(result.status, 200)
     assert.deepEqual(sent[0].to, [CATERING_TAGGED_INBOX])
-    assert.equal(sent[0].to.includes(CATERING_RESTAURANT_INBOX), false)
+    assert.equal(sent[0].to.includes("info@quattropazzi.com"), false)
     assert.equal(sent[0].replyTo, "maria@example.com")
   })
 
-  it("refuses a recipient override that copies the base Grok inbox", async () => {
-    const { result, sent } = await submit(inquiry(), {
+  it("refuses a real inquiry that would copy info@ or the base Grok inbox", async () => {
+    const restaurant = await submit(inquiry(), {
+      recipientOverride: `${CATERING_TAGGED_INBOX},info@quattropazzi.com`,
+    })
+    const baseInbox = await submit(inquiry(), {
       recipientOverride: `${CATERING_TAGGED_INBOX},lyfehospitality@mail.grokbot.com`,
     })
 
-    assert.equal(result.status, 503)
-    assert.equal(result.body.success, undefined)
-    assert.equal(sent.length, 0)
+    assert.equal(restaurant.result.status, 503)
+    assert.equal(restaurant.result.body.success, undefined)
+    assert.equal(restaurant.sent.length, 0)
+    assert.equal(baseInbox.result.status, 503)
+    assert.equal(baseInbox.sent.length, 0)
   })
 
   it("returns the original acceptance for an accidental duplicate submission", async () => {
@@ -196,7 +201,7 @@ describe("catering inquiry delivery", () => {
   it("strips header breaks from the guest name and keeps reply-to on the guest", () => {
     const email = buildOutboundEmail(
       inquiry({ name: "Maria\r\nBcc: attacker@example.com", email: "maria@example.com" }) as never,
-      [CATERING_TAGGED_INBOX, CATERING_RESTAURANT_INBOX]
+      [CATERING_TAGGED_INBOX]
     )
     assert.equal(email.subject.includes("\n"), false)
     assert.equal(email.subject.includes("\r"), false)
